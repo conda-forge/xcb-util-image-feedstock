@@ -10,7 +10,7 @@ source:
   sha256: 2db96a37d78831d643538dd1b595d7d712e04bdccf8896a5e18ce0f398ea2ffc
 
 build:
-  number: 0
+  number: 1
   skip: true  # [not linux]
   run_exports:
     - {{ pin_subpackage('xcb-util-image', max_pin='x.x') }}
@@ -21,11 +21,9 @@ requirements:
     - make
     - pkg-config
   host:
-    - libxcb >=1.13
+    - libxcb
     - xcb-util
     - xorg-xproto
-  run:
-    - libxcb >=1.13
 
 test:
   commands:
