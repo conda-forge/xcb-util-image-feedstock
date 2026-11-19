@@ -10,17 +10,18 @@ source:
   sha256: 2db96a37d78831d643538dd1b595d7d712e04bdccf8896a5e18ce0f398ea2ffc
 
 build:
-  number: 2
+  number: 3
   skip: true  # [not linux]
   run_exports:
     - {{ pin_subpackage('xcb-util-image', max_pin='x.x') }}
 
 requirements:
   build:
+    - gnuconfig  # [unix]
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
     - make
-    - pkg-config
+    - pkgconf
   host:
     - libxcb
     - xcb-util
